@@ -1,5 +1,5 @@
+let fs = require('fs')
 const path = require('path')
-let fs = require('fs');
 
 const inFolder = path.join(__dirname, "files");
 const outFolder = path.join(__dirname, "files-copy");
