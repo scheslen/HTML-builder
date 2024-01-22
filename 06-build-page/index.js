@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const distFolder = path.join(__dirname, 'project-dist'); //__dirname+'\\project-dist';
+const distFolder = path.join(__dirname, 'project-dist'); //__dirname\\project-dist
 
 const oHtmlComponents = {};
 let sHtmlIndex = '';
@@ -61,15 +61,14 @@ function createHtml() {
   });
 
   function writeHtml() {
-
     let fileWriteStream = fs.createWriteStream(path.join(distFolder, 'index.html'),{encoding: 'utf8'});
+
     for (let key in oHtmlComponents) {
       sHtmlIndex = sHtmlIndex.replace(`{{${key}}}`, oHtmlComponents[key]);
     }
     fileWriteStream.write(sHtmlIndex);
     fileWriteStream.end();
   };
-
 }
 
 // ..................................................................
